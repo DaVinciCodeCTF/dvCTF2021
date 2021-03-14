@@ -1,0 +1,24 @@
+@font-face {
+	font-family: 'z340';
+	src: url('z340-z408-combined-font-monospaced-webfont.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.cipher {
+	font-family: 'z340';
+	line-height: 0.8em;
+	font-size: 32pt;
+	color: white;
+}
+
+.center {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+body {
+	background-color: black;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gutenberg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+  </head>
+
+  <body>
+    <div class="login">
+      <h1>Homework compiling service</h1>
+      <form action="{{ url_for('print_my_homework') }}" method="post">
+        <label for="homework">
+          <i class="fas fa-book-open"></i>
+        </label>
+
+        <textarea id="homework" name="homework"></textarea>
+        <input type="submit" value="Print">
+      </form>
+    </div>
+  </body>
+</html>

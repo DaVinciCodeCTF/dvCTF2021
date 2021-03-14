@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="glowscript" class="glowscript">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet" />
+            <link type="text/css" href="https://www.glowscript.org/css/ide.css" rel="stylesheet" />
+            <script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery.min.js"></script>
+            <script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
+            <script type="text/javascript" src="https://www.glowscript.org/package/glow.3.0.min.js"></script>
+            <script type="text/javascript"><!--//--><![CDATA[//><!--
+
+            // START JAVASCRIPT
+            ;(function() {;
+                async function __main__() {
+                    "use strict";
+                    var version = ["3.0", "glowscript"];
+                    Array.prototype.toString = function() { return __parsearray(this) };
+                    var scene = canvas();
+                    var vector = vec;
+                    scene.width = 1920
+                    scene.height = 1080
+                    scene.range = 5
+                    scene.forward = vector(1["-u"](), 1["-u"](), 1["-u"]());
+
+                    var nosepose = vector(6.5, -2.6, 0.51) //1
+                    var neckpose = vector(5.5, -4.1, 0.67) //2
+                    var rshouldpose = vector(5.3, -5.8, 0.49) //3
+                    var relbowpose = vector(5.1, -7, 0.3) //3
+                    var rhandpose = vector(7.7, -4, 0.69)
+                    var lshouldpose = vector(8.2, -5.7, 0.54)
+                    var lelbowpose = vector(8.5, -7.6, 0.34)
+                    var lhandpose = vector(6.6, -7.2, 0.14) 
+                    var rlegpose = vector(5.9, -7.2, 0.14)
+                    var rkneepose = vector(0,0,0)
+                    var rfootpose = vector(0,0,0)
+                    var llegpose = vector(7.3, -7.2, 0.13)
+                    var lkneepose = vector(0,0,0)
+                    var lfootpose = vector(0,0,0)
+                    var reyespose = vector(6.2, -2.4, 0.85)
+                    var leyespose = vector(6.7, -2.4, 0.85)
+                    var rearpose = vector(5.9, -2.7, 0.82)
+                    var learpose = vector(7, -2.6, 0.83)
+
+                    var nose = sphere({visible:true})
+                    nose.pos = nosepose 
+                    nose.radius = 0.2
+                    nose.color = color.red
+
+                    var neck = sphere({visible:true})
+                    neck.pos = neckpose                  
+                    neck.radius = 0.2
+                    neck.color = color.green
+
+                    //Les deux bras
+
+                    var rshould = sphere({visible:true})
+                    rshould.pos = rshouldpose                
+                    rshould.radius = 0.2
+                    rshould.color = color.orange
+
+                    var relbow = sphere({visible:true})
+                    relbow.pos = relbowpose
+                    relbow.radius = 0.2
+                    relbow.color = color.yellow
+
+                    var rhand = sphere({visible:true})
+                    rhand.pos = rhandpose
+                    rhand.radius = 0.2
+                    rhand.color = color.green
+
+                    var lshould = sphere({visible:true})
+                    lshould.pos = lshouldpose
+                    lshould.radius = 0.2
+                    lshould.color = color.orange
+
+                    var lelbow = sphere({visible:true})
+                    lelbow.pos = lelbowpose
+                    lelbow.radius = 0.2
+                    lelbow.color = color.yellow
+
+                    var lhand = sphere({visible:true})
+                    lhand.pos = lhandpose
+                    lhand.radius = 0.2
+                    lhand.color = color.green
+
+                    //Les jambes
+
+                    var rleg = sphere({visible:true})
+                    rleg.pos = rlegpose
+                    rleg.radius = 0.2
+                    rleg.color = color.cyan
+
+                    var rknee = sphere({visible:false})
+                    rknee.pos = rkneepose
+                    rknee.radius = 0.2
+                    rknee.color = color.blue
+
+
+                    var rfoot = sphere({visible:false})
+                    rfoot.pos = rfootpose
+                    rfoot.radius = 0.2
+                    rfoot.color = color.blue
+
+                    var lleg = sphere({visible:true})
+                    lleg.pos = llegpose 
+                    lleg.radius = 0.2
+                    lleg.color = color.cyan
+
+                   	var lknee = sphere({visible:false})
+                    lknee.pos = lkneepose
+                    lknee.radius = 0.2
+                    lknee.color = color.blue
+
+                    var lfoot = sphere({visible:false})
+                    lfoot.pos = lfootpose 
+                    lfoot.radius = 0.2
+                    lfoot.color = color.blue
+
+                    //Le visage
+
+                    var reyes = sphere({visible:true})
+                    reyes.pos = reyespose
+                    reyes.radius = 0.2
+                    reyes.color = color.purple
+
+                    var leyes = sphere({visible:true})
+                    leyes.pos = leyespose
+                    leyes.radius = 0.2
+                    leyes.color = color.purple
+
+                    var rear  = sphere({visible:true})
+                    rear.pos = rearpose
+                    rear.radius = 0.2
+                    rear.color = color.red
+
+                    var lear = sphere({visible:true})
+                    lear.pos = learpose
+                    lear.radius = 0.2
+                    lear.color = color.red
+
+                    var p19 = sphere({visible:false})
+                    p19.pos = vector(0,0,0)
+                    p19.radius = 0.2
+
+                    var p20 = sphere({visible:false})
+                    p20.pos = vector(0,0,0)
+                    p20.radius = 0.2
+
+                    var p21 = sphere({visible:false})
+                    p21.pos = vector(0,0,0)
+                    p21.radius = 0.2
+
+                    var p22 = sphere({visible:false})
+                    p22.pos = vector(0,0,0)
+                    p22.radius = 0.2
+
+                    var p23 = sphere({visible:false})
+                    p23.pos = vector(0,0,0)
+                    p23.radius = 0.2
+
+                    var p24 = sphere({visible:false})
+                    p24.pos = vector(0,0,0)
+                    p24.radius = 0.2
+
+                }
+            ;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
+            // END JAVASCRIPT
+
+            //--><!]]></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,3 @@
+pt = "IHOPEYOUAREHAVINGLOTSOFFUNINTRYINGTOSOLVETHISCHALLENGEPLEASEDONOTCILLPEOPLETHANCYOUTHEPASSWORDISCUOTEMONAILOOVEYOUSOMUCHENDCUOTEINSMALLCAPSOCAYBYEEEEEEEE"
+
+key = {'I': ['H', 'k', '<', 'P', 'y'], 'H': ['+'], 'O': ['M', 'V', 'R', '^'], 'P': ['8', 'j'], 'E': ['|', 'B', 'b', '4', 'c', 'N'], 'Y': ['C', '3', 'X'], 'U': ['@', '/', 'q'], 'A': ['K', '*', 'z', 'O', 'l'], 'R': ['E', 'Z', '1', 'T'], 'V': ['5'], 'N': ['.', '9', '>', 'D', 'Y'], 'G': ['L'], 'L': ['d', '7', 't', '6'], 'T': ['(', '#', 'G', '%', ';', ':'], 'S': ['U', '&', 'J', '-'], 'F': ['F'], 'C': ['p'], 'M': ['2'], 'W': ['W', ')'], 'B': ['f', '_'], 'D': ['S', 'A']}

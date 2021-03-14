@@ -1,0 +1,7 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  flippingtables:
+    build: .
+    ports:
+      - "3333:2000"
+    restart: always

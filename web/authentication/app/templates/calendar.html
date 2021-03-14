@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}Calendar{% endblock %}
+{% block head%} 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js"></script>
+{% endblock %}
+{% block body %}
+<div id="calendar"></div>
+<script>
+	
+  	let calendarEl = document.getElementById ('calendar');
+  	let calendar = new FullCalendar.Calendar(calendarEl, {
+      events : [
+      	{% for event in events %}
+        {
+        	title : '{{event.todo}}',
+            start : '{{event.date}}',
+            color : '{{event.color}}'
+        },
+        {% endfor %}
+      ]
+  	});
+
+  	calendar.render();
+
+</script>
+{% endblock %}

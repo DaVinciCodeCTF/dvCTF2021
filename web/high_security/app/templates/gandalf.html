@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Gandalf Sax</title>
+   </head>
+   <body>
+      <style> html,body{
+         margin:0;
+         height:100%;
+         overflow:hidden;
+         }
+         img{
+         min-height:100%;
+         min-width:100%;
+         height:auto;
+         width:auto;
+         position:absolute;
+         top:-100%; bottom:-100%;
+         left:-100%; right:-100%;
+         margin:auto;
+         }
+         .hidden{
+         visibility: hidden;
+         position: absolute;
+         top: -9999px;
+         }
+      </style>
+      <script>
+         function resizeToMax(id) {
+         
+           myImage = new Image()
+         
+           var img = document.getElementById(id);
+         
+           myImage.src = img.src;
+         
+           if (myImage.width > myImage.height) {
+         
+             img.style.width = "100%";
+         
+           } else {
+         
+             img.style.height = "100%";
+         
+           }
+         
+         }
+         
+         function requestFullscreen(element) {
+         
+         if (element.requestFullscreen) {
+         
+         element.requestFullscreen();
+         
+         } else if (element.mozRequestFullScreen) {
+         
+         element.mozRequestFullScreen();
+         
+         } else if (element.webkitRequestFullScreen) {
+         
+         element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+         
+         }
+         
+         }
+         
+         
+         
+         if (document.fullscreenEnabled) {
+         
+         requestFullscreen(document.documentElement);
+         
+         }
+         
+      </script>
+      <script type="text/javascript">
+         window.onload = maxWindow;
+         
+         
+         
+         function maxWindow() {
+         
+         window.moveTo(0, 0);
+         
+         
+         
+         
+         
+         if (document.all) {
+         
+         top.window.resizeTo(screen.availWidth, screen.availHeight);
+         
+         } else if (document.layers || document.getElementById) {
+         
+         if (top.window.outerHeight < screen.availHeight || top.window.outerWidth < screen.availWidth) {
+         
+         top.window.outerHeight = screen.availHeight;
+         
+         top.window.outerWidth = screen.availWidth;
+         
+         }
+         
+         }
+         
+         }
+
+         
+        </script>
+
+        <img class="image" src="{{url_for('static', filename='gandalf/gandalf.gif')}}" draggable="false" onload="resizeToMax(this.id)">
+
+        <audio class="hidden" controls autoplay>
+          <source src="{{url_for('static', filename='gandalf/Saxo.mp3')}}" type="audio/mpeg">
+        </audio>
+</html>

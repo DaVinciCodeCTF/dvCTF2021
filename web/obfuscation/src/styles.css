@@ -1,0 +1,40 @@
+
+
+* {              
+  background-color: #303334;
+  font-size: 18px;
+  font-family: "Helvetica";
+  font-weight: normal;
+  box-sizing: border-box;
+  text-align: center 
+  }
+
+.script {
+  background:  #e7ded1;
+  color: #e7ded1;
+}
+input[type=text]{
+  margin-top: 3%;
+  font-size: 14px;
+  color: #e7ded1;
+  background:  #303334;
+  width: 250px;
+}
+
+input[type=button]{
+  background: #303334;
+  color: #e7ded1;
+}
+
+.box {
+  text-align : center;
+  padding : 1em;
+  width: 350px;
+  height: 350px;
+  margin-top: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  color:  #e7ded1;
+  line-height: 2em;
+  border: 0.5em solid #e7ded1;
+}

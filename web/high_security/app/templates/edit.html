@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title%}Edit{% endblock %}
+{% block body %}
+
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card card-body">
+        <form action="edituser/{{contact.0}}" method="POST">
+          <div class="form-group">
+
+          <div class="form-group">
+            <input type="text" name="ecole" value="{{contact.8}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="annee" value="{{contact.9}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="phone" value="{{contact.10}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="email" value="{{contact.3}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">
+              Update
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

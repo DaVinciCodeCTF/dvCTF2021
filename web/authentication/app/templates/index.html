@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title%}Index{% endblock %}
+{% block body %}
+
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped table-hover table-bordered table-sm bg-white">
+        <thead>
+          <tr>
+            <td>Nom</td>
+            <td>Prenom</td>
+            <td>Spécialité</td>
+            <td>Email</td>
+            <td>École</td>
+            <td>Année</td>
+            <td>Téléphone</td>
+            <td>Admin</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for contact in contacts %}
+          <tr>
+            <td>{{contact.6}}</td>
+            <td>{{contact.7}}</td>
+            <td>{{contact.11}}</td>
+            <td>{{contact.3}}</td>
+            <td>{{contact.8}}</td>
+            <td>{{contact.9}}</td>
+            <td>{{contact.10}}</td>
+            <td>{{contact.4}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

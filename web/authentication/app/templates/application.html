@@ -1,0 +1,97 @@
+{% extends "layout.html" %}{% block title%}Présence{% endblock %}{% block body %}  
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card card-body">
+      <table class="table table-striped table-hover table-bordered table-sm bg-white">
+        <thead>
+          <tr>
+            <td>Cours</td>
+            <td>Date</td>
+            <td>Horaire</td>
+            <td>Lien</td>
+          </tr>
+        </thead>
+        {% for cours in cours %}
+        <tbody>
+          <tr>
+            <td>{{cours.1}}</td>
+            <td>{{cours.2}}</td>
+            <td>{{cours.3}}</td>
+            <td>
+              <a href="{{cours.4}}" class="btn btn-secondary">Lien du Zoom</a>
+              {% if account['admin'] == 1 %}
+              <a href="deletecours/{{cours.0}}" class="btn btn-danger btn-delete">Suppr</a>
+              {% endif %}
+            </td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        </thead>
+       </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 offset-md-3">
+    <div class="card card-body">
+      {% if account['present'] == 0 %}
+      <form action="{{url_for('presence')}}" method="POST">
+        <button class="btn btn-primary btn-block">Valider</button>
+      </form>
+      {% endif %}{% if account['present'] == 1 %}
+      <form action="{{url_for('presence')}}" method="POST">
+        <div style="text-align: center">
+          <h4>Présent</h>
+        </div>
+      </form>
+      {% endif %}
+    </div>
+    {% if account['admin'] == 1 %}
+    
+    <div class="col">
+      <div class="card card-body">
+        <form action="{{url_for('appel')}}" method="POST">
+          <button class="btn btn-primary btn-block">Ouverture de l'appel</button>
+        </form>
+      </div>
+      
+    <table class="table table-striped table-hover table-bordered table-sm bg-white">
+      <thead>
+        <tr>
+          <td>Nom</td>
+          <td>Prénom</td>
+          <td>Spécialité</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for contact in contacts %}{% if contact.5 == 0 %}
+        <tr>
+          <td>{{contact.6}}</td>
+          <td>{{contact.7}}</td>
+          <td>{{contact.11}}</td>
+        </tr>
+        {% endif %}{% endfor %}
+      </tbody>
+    </table>
+    </div>
+    <div class="card card-body">
+      <form action="{{url_for('add_cours')}}" method="POST">
+        <div class="form-group">
+          <input type="text" class="form-control" name="titre" placeholder="Titre du cours">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="datedb" placeholder="Date">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="horaire" placeholder="Horaire">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="lien" placeholder="Lien">
+        </div>
+        <button class="btn btn-primary btn-block">Save</button>
+      </form>
+    </div>
+  </div>
+  {% endif %}
+
+</div>
+{% endblock %}

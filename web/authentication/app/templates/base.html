@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title%} {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css')}}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.css">
+
+    {% block head%} {% endblock %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar"> 
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Accueil</a></li>
+          <li><a href="{{ url_for('members') }}"><i class="fas fa-user"></i>Membres</a></li>
+          <li><a href="{{ url_for('logout') }}"><i class="fas fa-user"></i>Logout</a></li>
+        </ul> 
+      </div>
+      <div class="main_content">
+        <div class="header" align="center">
+          <img  class="avatar" width="50" height="50" src="static/lajoute/logo.png"></div>  
+        <div class="info">
+          {% block content %}
+
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

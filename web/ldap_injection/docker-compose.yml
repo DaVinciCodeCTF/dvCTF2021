@@ -1,0 +1,32 @@
+version: '3'
+services:
+  apache2:
+    build: './apache2_conf/'
+    container_name: "apache2"
+    ports:
+      - "8080:80"
+    volumes:
+      - "./web_root/:/var/www/dvctf_challenge/"
+    links:
+      - "php"
+      - "openldap"
+  php:
+    build: './php_conf/'
+    container_name: "php"
+    volumes:
+      - "./web_root/:/var/www/dvctf_challenge/"
+  openldap:
+    command: --loglevel debug --copy-service
+    build: './ldap_conf/'
+    container_name: openldap
+    environment:
+      LDAP_TLS: 'false'
+      LDAP_ORGANISATION: "dvctf.local"
+      LDAP_DOMAIN: "dvctf.local"
+      LDAP_BASE_DN: "dc=dvctf,dc=local"
+      LDAP_ADMIN_PASSWORD: "Tfron45grtgt!%GYFRgrtgt"
+    volumes:
+      - ./ldap_conf/dvctf.ldif:/container/service/slapd/assets/config/bootstrap/ldif/custom/50-rootme.ldif
+      - /var/lib/ldap
+      - /etc/ldap/slapd.d
+      - /container/service/slapd/assets/certs/

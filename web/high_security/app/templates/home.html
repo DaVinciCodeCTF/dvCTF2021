@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block title%}Home Page{% endblock %}{% block body %}  
+
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <h2><center>Bonjour {{session['prenom']}} {{session['nom']}}</center></h2>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h5>Identifiant : {{session['username']}}</h5>
+            <h5>Nom : {{session['nom']}}</h5>
+            <h5>Prénom : {{session['prenom']}}</h5>
+            <h5>Spécialité : {{session['specialite']}}</h5>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h5>École : {{session['ecole']}}</h5>
+            <h5>Année : {{session['annee']}}</h5>
+            <h5>Téléphone : {{session['phone']}}</h5>
+            <h5>Mail : {{session['email']}}</h5>
+        </div>
+    </div>
+</div>
+<div class="col">
+    <table class="table table-striped table-hover table-bordered table-sm bg-white">
+      <thead>
+        <tr>
+            <td>Date</td>
+            <td>Description</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for infos in infos %}
+        <tr>
+            <td>{{infos.1}}</td>
+            <td>{{infos.2}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+{% endblock %}

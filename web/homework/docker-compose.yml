@@ -1,0 +1,7 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  homework:
+    build: .
+    ports:
+      - "6666:5000"
+    restart: always

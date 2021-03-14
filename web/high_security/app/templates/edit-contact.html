@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block title%}Edit{% endblock %}
+{% block body %}
+
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card card-body">
+        <form action="/update/{{contact.0}}" method="POST">
+          <div class="form-group">
+            <input type="text" name="username" value="{{contact.1}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+          <input type="text" name="nom" value="{{contact.6}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+          <input type="text" name="prenom" value="{{contact.7}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+          <input type="text" name="ecole" value="{{contact.8}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+          <input type="text" name="annee" value="{{contact.9}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+          <input type="text" name="specialite" value="{{contact.11}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="email" value="{{contact.3}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+          <input type="text" name="phone" value="{{contact.10}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="admin" value="{{contact.4}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="present" value="{{contact.5}}" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">
+              Update
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

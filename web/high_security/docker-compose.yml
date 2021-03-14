@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "65535:5000"
+    restart: always
+    hostname: web
+  db:
+    image: mysql
+    container_name: hs_db
+    environment:
+      MYSQL_ROOT_PASSWORD: nrBMRNtsLjj3H#
+      MYSQL_DATABASE: useless_site
+      MYSQL_USER: reallystrongadmin
+      MYSQL_PASSWORD: Yr%Pq79J6My7wb
+    volumes:
+      - ./init/:/docker-entrypoint-initdb.d
+    restart: always
+  xss:
+    build: ./xss-bot/
+    restart: always

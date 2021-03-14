@@ -1,0 +1,77 @@
+# LDIF Export for dc=dvctf,dc=local
+# Server: openldap (openldap)
+
+version: 1
+
+# Entry 1: ou=Users,dc=dvctf,dc=local
+dn: ou=Users,dc=dvctf,dc=local
+changetype: add
+objectclass: top
+objectclass: organizationalUnit
+ou: Users
+description: Container for user entries
+
+# Entry 2: uid=jdoe,ou=Users,dc=dvctf,dc=local
+dn: uid=jdoe,ou=Users,dc=dvctf,dc=local
+changetype: Add
+uid: jdoe
+givenName: John
+sn: Doe
+cn: John Doe
+description: developper
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetorgPerson
+userpassword: {MD5}WSwJTVV0+zL+nUzOJyQFiA==
+mail: jdoe@dvctf.local
+#tryharder
+
+# Entry 3: uid=mkoal,ou=Users,dc=dvctf,dc=local
+dn: uid=mkoal,ou=Users,dc=dvctf,dc=local
+changetype: Add
+uid: mkoal
+givenName: Mary
+sn: Koal
+cn: Mary Koal
+description: developper
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetorgPerson
+userpassword: {MD5}EKogjn6eJXo/T+ZtGs+E6A==
+mail: mkoal@dvctf.local
+#letme1n
+
+# Entry 4: uid=hmilles,ou=Users,dc=dvctf,dc=local
+dn: uid=hmilles,ou=Users,dc=dvctf,dc=local
+changetype: Add
+uid: hmilles
+givenName: Henry
+sn: Milles
+cn: Henry Milles
+description: developper
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetorgPerson
+userpassword: {MD5}p1lLyy9fYt5lFywyGpQDhA==
+mail: hmilles@dvctf.local
+#skywalker
+
+# Entry 4: uid=mkiloa,ou=Users,dc=dvctf,dc=local
+dn: uid=mkiloa,ou=Users,dc=dvctf,dc=local
+changetype: Add
+uid: mkiloa
+givenName: Mike
+sn: Kiloa
+cn: Mike Kiloa
+description: sysadmin
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetorgPerson
+userpassword: {MD5}Abr2pWImreR7Gj9jpet1PA==
+mail: mkiloa@dvctf.local
+#Chicken123
+

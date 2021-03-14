@@ -1,0 +1,7 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  formatme:
+    build: .
+    ports:
+      - "8888:4002"
+    restart: always

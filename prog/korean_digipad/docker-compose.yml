@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  digipad:
+    build: ./app
+    container_name: digipad
+    hostname: digipad
+    restart: always
+  nginx:
+    build: ./nginx
+    ports:
+      - "2020:80"
+    restart: always
